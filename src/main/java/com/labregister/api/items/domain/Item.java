@@ -1,5 +1,6 @@
 package com.labregister.api.items.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.labregister.api.core.validation.Entity;
 
 import javax.validation.constraints.NotBlank;
@@ -10,6 +11,7 @@ import java.util.Map;
 /**
  * Simple Item resource to demonstrate Labregister functionality
  */
+@JsonIgnoreProperties(value = {"creationDate", "id"}, allowGetters = true)
 public class Item implements Entity, Comparable<Item> {
 
 	private String id;
