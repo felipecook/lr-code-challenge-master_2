@@ -39,7 +39,7 @@ export class App {
 
   /**
    * Persist an item
-   * 
+   *
    * Passed as function reference to custom element
    *   and thus needs to be an arrow function to bind 'this' *
    *
@@ -50,4 +50,21 @@ export class App {
     await Api.postItem(item);
     this.getAllItems();
   }
+
+  /**
+   * Update an item
+   *
+   *
+   * @param {Api.Item} item
+   * @memberof App
+   */
+  updateItem = async (item: Api.Item): Promise<void> => {
+    await Api.putItem(item);
+    this.getAllItems();
+  }
+
+
 }
+
+
+
